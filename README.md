@@ -1,2 +1,61 @@
-# TicTacToe-RaspberryPi4-Database
-Tic-Tac-Toe game on Raspberry Pi with Sense HAT, AI opponents, and SQLite database integration.
+Tic-Tac-Toe Game on Raspberry Pi with Sense HAT and Database Integration
+
+Overview
+This project implements a Tic-Tac-Toe game on a Raspberry Pi using the Sense HAT for input and display. The game supports two players: either two local players, one player against a weak or strong AI, or a network-based game. The game data, including player details and results, can be saved to a local SQLite database for future analysis.
+
+Features
+1. Play Modes:
+      -Player vs Player (local)
+      -Player vs AI (Weak/Strong)
+2. AI Opponents: Choose between weak or strong AI. The strong AI uses the Minimax algorithm for optimal play.
+3. Sense HAT: Display the game board and get input via the Sense HAT joystick.
+4. Database Integration: Save game details (moves, results, player statistics) using SQLite.
+
+
+Components
+1. Player Class: Manages player information (name, email, password) and handles user input for selecting game symbols, opponent types, and turns.
+2. GameBoard Class: Handles displaying the game board on the Sense HAT and console. Also manages win screens, options screens, and victory notifications.
+3. Computer Class: Provides AI functionality for the game. Includes both a weak and strong AI option. The strong AI uses the Minimax algorithm.
+4. DataBase Class: Manages saving and retrieving data (player details, game results, moves) from an SQLite database.
+5. Main Program: Integrates all components and handles the main game loop, including player turns, move processing, and game-over conditions.
+Setup
+
+Hardware Requirements:
+1. Raspberry Pi with Sense HAT
+2. Sense HAT library installed (sudo apt install sense-hat)
+
+Software Requirements:
+1. Python 3
+2. SQLite for the database (already part of Python standard library)
+3. Sense HAT library (sudo apt-get install sense-hat)
+4. SQlite server App in RaspberryPi to view database
+
+How It Works
+
+Game Logic:
+1. The game board is represented as a 3x3 array.
+2. 'X' is represented as 1, and 'O' is represented as 2.
+3. The empty board is displayed as blank squares on the Sense HAT, with selections highlighted in white.
+4. Players take turns making moves, with the winner being announced when one player aligns three symbols in a row, column, or diagonal.
+
+AI Logic:
+1. The weak AI chooses random available moves.
+2. The strong AI uses the Minimax algorithm to evaluate the best possible move.
+
+Database:
+1. The player data, including statistics such as wins and losses, is saved in an SQLite database.
+2. The game results and moves are also recorded for future analysis.
+
+File Structure
+1. Main.py: The entry point of the program, which integrates all components and controls the flow of the game.
+2. Player.py: Manages the player's information and settings.
+3. GameBoard.py: Handles the display of the game board on both Sense HAT and the console.
+4. Computer.py: Contains the AI logic for the game.
+5. DataBase.py: Manages the SQLite database for storing game information.
+
+Future Enhancements
+Network Play: Implement multiplayer games over the network.
+Web Interface: Create a web interface to allow remote players to join games using a browser.
+
+Credits
+Developed by Kaushal Khadka.
