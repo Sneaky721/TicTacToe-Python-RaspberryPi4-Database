@@ -28,6 +28,7 @@ Software Requirements:
 1. Python 3
 2. SQLite for the database (already part of Python standard library)
 3. Sense HAT library (sudo apt-get install sense-hat)
+4. SQlite server App in RaspberryPi to view database
 
 How It Works
 
